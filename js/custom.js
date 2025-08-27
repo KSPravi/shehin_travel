@@ -1,3 +1,8 @@
+$(window).on("load", function () {
+  $(".preloader").fadeOut("slow", function () {
+    $(this).remove();
+  });
+});
 $(".service-carousel").owlCarousel({
   loop: true,
   margin: 30,

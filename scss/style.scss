@@ -182,7 +182,19 @@ a,
 button {
   transition: all 500ms;
 }
-
+.preloader {
+  @extend %d-c_a-c_j-c;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  img {
+    width: 150px;
+  }
+}
 .more-btn {
   display: flex;
   align-items: center;

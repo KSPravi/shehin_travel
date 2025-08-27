@@ -214,13 +214,13 @@ figure,
 .figure {
   margin: 0;
 }
-header,
 section,
 footer {
   width: 100%;
   float: left;
 }
 section {
+  scroll-margin-top: 50px;
   &:not(.banner) {
     padding: 100px 0;
     @media (width<=991.98px) {
@@ -246,25 +246,38 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 50px;
-    left: 0;
-    right: 0;
+    left: 20px;
+    padding: 10px 0;
+    right: 20px;
+    background-color: transparent;
+    transition: all 500ms;
+    border-radius: 12px;
     @media (width<=1199.98px) {
-      top: 30px;
-    }
-    @media (width<=575.98px) {
       top: 20px;
     }
+    @media (width<=991.98px) {
+      left: 0;
+      right: 0;
+      border-radius: 0;
+      top: 0;
+    }
+
     .row {
       justify-content: space-between;
     }
     .logo {
+      display: flex;
+      align-items: center;
       a {
         img {
           max-width: 150px;
           filter: brightness(0) invert(1);
+          @media (width<=575.98px) {
+            max-width: 120px;
+          }
         }
       }
     }
@@ -273,7 +286,7 @@ section {
       display: flex;
       justify-content: flex-end;
       gap: 60px;
-      @media (width<=767.98px) {
+      @media (width<=991.98px) {
         gap: 20px;
       }
       .main_menu {
@@ -294,7 +307,7 @@ section {
           justify-content: center;
           padding: 50px;
           align-items: flex-start;
-          transform: translateX(-100%);
+          transform: translateX(calc(-100% - 20px));
           transition: all 500ms;
           backdrop-filter: blur(5px);
           z-index: 3;
@@ -312,9 +325,18 @@ section {
               color: var(--site-theme-color-lite);
             }
           }
+          &.active {
+            a {
+              color: var(--site-theme-color-lite);
+              @media (width<=991.98px) {
+                color: var(--site-text-color);
+                font-weight: 400;
+              }
+            }
+          }
         }
         &.menu-opened {
-          transform: translateX(0);
+          transform: translateX(-20px);
         }
       }
 
@@ -340,6 +362,7 @@ section {
           @media (width<=480.98px) {
             width: 45px;
             height: 45px;
+            border-radius: 6px;
           }
           span {
             @media (width<=480.98px) {
@@ -389,6 +412,13 @@ section {
             }
           }
         }
+      }
+    }
+    &.scrolled {
+      background-color: var(--site-text-color);
+      transform: translateY(-30px);
+      @media (width<=1199.98px) {
+        transform: translateY(0px);
       }
     }
   }
@@ -915,6 +945,9 @@ section {
           row-gap: 10px;
 
           li {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.686);
             a {
               font-size: 16px;
               font-weight: 300;

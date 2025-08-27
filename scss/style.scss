@@ -721,6 +721,7 @@ section {
   }
   .testimonials {
     padding: 0 !important;
+
     margin-bottom: 100px;
     @media (width<=991.98px) {
       margin-bottom: 90px;
@@ -842,6 +843,23 @@ section {
           }
         }
       }
+    }
+  }
+  .gallery {
+    padding-top: 0 !important;
+    padding-bottom: 20px !important;
+    @media (width<=1199.98px) {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+    @media (width<=991.98px) {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      padding-bottom: 12px !important;
+    }
+    figure {
+      border-radius: 12px;
+      overflow: hidden;
     }
   }
   footer {
@@ -1137,16 +1155,33 @@ section {
     .contact-box {
       .inner-contact {
         height: 100%;
-        padding: 30px;
-        background-color: #fff9ed;
-        border-radius: 12px;
+        gap: 40px;
+        text-align: center;
+        @media (width<=767.98px) {
+          gap: 20px;
+        }
         h5 {
           margin-bottom: 10px;
           font-weight: 500;
           color: var(--site-theme-color);
         }
         .top-wrap {
-          margin-bottom: 20px;
+          padding: 30px;
+          background-color: #fff9ed;
+          border-radius: 12px;
+          width: 50%;
+          @media (width<=767.98px) {
+            width: 100%;
+          }
+        }
+        .bottom-wrap {
+          padding: 30px;
+          width: 50%;
+          background-color: #fff9ed;
+          border-radius: 12px;
+          @media (width<=767.98px) {
+            width: 100%;
+          }
         }
         a {
           font-size: 16px;
@@ -1161,7 +1196,6 @@ section {
         address {
           display: flex;
 
-          max-width: 340px;
           margin-bottom: 0;
           color: var(--site-text-color);
 
@@ -1171,75 +1205,7 @@ section {
         }
       }
     }
-    .form-box {
-      .form-inner {
-        padding-left: 50px;
-        @media (width<=991.98px) {
-          padding-left: 0;
-          margin-top: 50px;
-        }
-        @media (width<=575.98px) {
-          margin-top: 30px;
-        }
-        h4 {
-          font-size: 30px;
-          @media (width<=575.98px) {
-            font-size: 22px;
-          }
-        }
 
-        form {
-          margin: 0 -8px;
-          display: flex;
-          flex-wrap: wrap;
-          row-gap: 16px;
-          .form-group {
-            padding: 0 8px;
-            .inner-field {
-              display: flex;
-              flex-direction: column;
-
-              label {
-                font-size: 16px;
-
-                margin-bottom: 6px;
-              }
-
-              .form-control {
-                font-weight: 300;
-                height: 45px;
-                border-radius: 4px;
-                &::placeholder {
-                  color: #adadad;
-                }
-                &:focus {
-                  border-color: var(--site-theme-color-lite);
-                  box-shadow: none;
-                }
-              }
-
-              textarea.form-control {
-                min-height: 100px;
-                resize: vertical;
-              }
-            }
-            button {
-              background-color: var(--site-link-color);
-              color: #fff;
-              border: 0;
-              text-align: center;
-              font-weight: 300;
-              font-size: 16px;
-              border-radius: 4px;
-              padding: 7px 20px;
-              &:hover {
-                background-color: var(--site-link_hover_color);
-              }
-            }
-          }
-        }
-      }
-    }
     .gmap {
       margin-top: 70px;
       @media (width<=767.98px) {

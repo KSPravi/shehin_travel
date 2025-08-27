@@ -44,7 +44,44 @@ $(".testimonial-carousel").owlCarousel({
   autoplayTimeout: 4500,
   smartSpeed: 2500,
 });
+$(".gallery-carousel").owlCarousel({
+  loop: true,
+  margin: 20,
+  dots: false,
+  nav: false,
+  items: 4,
+  autoplay: true,
+  autoplayTimeout: 4000,
+  smartSpeed: 2500,
+  navText: ["", ""],
+  responsive: {
+    0: {
+      items: 1,
+      margin: 12,
+    },
 
+    480: {
+      items: 2,
+      margin: 12,
+    },
+    768: {
+      items: 3,
+      margin: 12,
+    },
+    992: {
+      items: 3,
+      margin: 20,
+    },
+    1200: {
+      items: 4,
+      margin: 20,
+    },
+    1600: {
+      items: 6,
+      margin: 20,
+    },
+  },
+});
 $(".toggle-menu").click(function () {
   $(this).toggleClass("menu-active");
   $(".main_menu").toggleClass("menu-opened");
